@@ -32,9 +32,15 @@ function mostrarConciertos(){
     // para ir a comprar o volver al inicio
     let volver = prompt("¿Desea comprar entradas? \n\n_Si \n_No");
 
+    while(volver !== "Si" && volver !== "SI" && volver !== "si" &&  volver !== "No" && volver !== "NO" && volver !== "no"){
+
+        volver = prompt("ERROR. \n\n¿Desea comprar entradas? \n\n_Si \n_No");
+    }
+
     if(volver === "Si" || volver === "SI" || volver === "si"){
 
-        comprarEntradas()
+        registrarse();
+        comprarEntradas();
 
     } else{
 
@@ -176,6 +182,11 @@ function comprarEntradas(){
         // pregunto si quiere seguir comprando o no
         let seguir = prompt("Seguir comprando: \n\n_Si \n_No");
 
+        while(seguir !== "Si" && seguir !== "SI" && seguir !== "si" &&  seguir !== "No" && seguir !== "NO" && seguir !== "no"){
+
+            seguir = prompt("ERROR. \n\n¿Desea seguir comprando: \n\n_Si \n_No");
+        }
+
         if(seguir === "Si" || seguir === "SI" || seguir === "si"){
 
             comprarEntradas();
@@ -207,6 +218,11 @@ function hayEntradasDisponibles (entradas){
 function ingresar(){
 
     let ingreso = parseInt(prompt("Boleteria: \n\n_Iniciar Sesión: 1 \n\n_Mostrar Lista de Conciertos : 2 \n\n_Cerrar Sesión : 3"));
+
+    while(ingreso !== 1 && ingreso !== 2 && ingreso !== 3){
+
+        ingreso = parseInt(prompt("ERROR Ingrese: \n\n _Iniciar Sesión: 1 \n\n_Mostrar Lista de Conciertos : 2 \n\n_Cerrar Sesión : 3"))
+    }
 
     if(ingreso === 1){
 
