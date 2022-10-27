@@ -1,16 +1,372 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Logo -->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Titulo -->
+    <title>DepartamentoBa</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <title>Boleteria De La Sala</title>
-</head>
-<body>
-    
-    <h1>Boleteria</h1>
 
+</head>
+
+<body>
+    <!-- nav -->
+    <header>
+        <!-- Barra de Navegación -->
+        <nav class="navbar contenedor">
+            <!-- logo -->
+            <div>
+                <a href="#">
+                    <img id="logo_imagen" src="img/logo.png"
+                        alt="Logo de DepartamentoBa (Circulo blanco con una intepretación de unas teclas de un piano de un color negro)">
+                </a>
+            </div>
+            <!-- menu  -->
+            <ul class="nav_link ">
+                <li class="nav_items">
+                    <a href="#" class="active nav_links">Inicio</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#boleteria" class="nav_links">Boleteria</a>
+                </li>
+                <li class="nav_items" id="comprar_entradas">
+                    <a href="#boton_comprar" class="nav_links_comprar">Comprar Boletos</a>
+                </li>
+                <!-- botones de inicio sesion y registro -->
+                <!-- <li class="nav_items" id="inicio_sesion">
+                    <a href="#" class="nav_links_user">Entrar</a>
+                </li>
+                <li class="nav_items" id="registrarse">
+                    <a href="#" class="nav_links_user">Registrarse</a>
+                </li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- presentación -->
+    <main id="presentación">
+        <img src="img/main2.png"
+            alt="Ilustración de sillon, con cuadros, guitarra, una alfobra y la palabra `Departamento`"
+            id="presentacion_img">
+        <div class="presentacion_textos">
+            <h2 id="presentacion_titulo">Algo se <strong class="titulo_marca">respira</strong> en este momento.</h2>
+            <p class="presentacion_parrafo">Conciertos intimos & acusticos de la música para la música.</p>
+        </div>
+    </main>
+
+    <!-- intro -->
+    <section id="intro">
+        <p class="intro_parrafo">dpto.</p>
+    </section>
+
+    <!-- nosotros -->
+    <section id="nosotros">
+        <div class="nosotros_contenedor">
+            <p class="nosotros_parrafo">En un pequeño lugar, hay <strong class="nosotros_marca">música</strong>.</p>
+
+            <p class="nosotros_parrafo">En un pequeño lugar, hay <strong class="nosotros_marca">magía</strong>.</p>
+
+            <p class="nosotros_parrafo">En un pequeño <strong class="nosotros_marca">lugar</strong>.</p>
+
+            <p class="nosotros_parrafo">Una <strong class="nosotros_marca">familia.</strong></p>
+        </div>
+        <div class="nosotros_contenedor">
+            <img class="nosotros_img" src="img/nosotros.jpg"
+                alt="Acustico de dos artistas en DepartamentoBa, junto a una guitarra.">
+        </div>
+    </section>
+
+
+    <!-- boleteria-->
+    <section id="boleteria">
+        <h2>Boleteria</h2>
+        <div class="conciertos_contenedor">
+
+            <!-- Concierto 1 -->
+            <article id="concierto1">
+                <img class="concierto_img" src="img/pazCarrara.jpg">
+                <div class="concierto_info">
+                    <p class="concierto_nombre"> <strong class="artista">Paz Carrara </strong> - Me canse de hacer
+                        canciones (que no salgan si no estoy llorando)</p>
+                </div>
+            </article>
+
+            <!-- Concierto 2 -->
+            <article id="concierto2">
+                <img class="concierto_img" src="img/francoMasciarelli.jpg">
+                <div class="concierto_info">
+                    <p class="concierto_nombre"> <strong class="artista">Franco Masciarelli</strong> - Otro Sol</p>
+                </div>
+            </article>
+
+            <!-- Concierto 3 -->
+            <article id="concierto3">
+                <img class="concierto_img" src="img/paulaPrieto.jpg">
+                <div class="concierto_info">
+                    <p class="concierto_nombre"> <strong class="artista">Paula Prieto </strong> - esto es para mi, || ep
+                    </p>
+                </div>
+            </article>
+
+            <!-- Concierto 4 -->
+            <article id="concierto4">
+                <img class="concierto_img" src="img/martinOliver.jpg">
+                <div class="concierto_info">
+                    <p class="concierto_nombre"> <strong class="artista">Martin Oliver </strong> - COMO CREAR MONSTRUOS
+                    </p>
+                </div>
+            </article>
+
+            <!-- Concierto 5 -->
+            <article id="concierto5">
+                <img class="concierto_img" src="img/delfinaMancardo.jpg">
+                <div class="concierto_info">
+                    <p class="concierto_nombre"> <strong class="artista">Delfina Mancardo </strong> - OCTANTE</p>
+                </div>
+            </article>
+
+            <!-- concierto 6 -->
+            <article id="concierto6">
+                <img class="concierto_img" src="img/KND.jpg">
+                <div class="concierto_info">
+                    <p class="concierto_nombre"> <strong class="artista">KND </strong> -Bonneafaid</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
+    <!-- boton comprar -->
+    <div class="boton">
+        <button id="boton_comprar" type="button">¡ Comprar Entradas !</button>
+    </div>
+
+
+    <!-- comprar entradas -->
+
+    <!-- paso 1 -->
+    <div id="paso1" class="no_mostrar">
+        <div id="comprar">
+            <h2>Comprar Entradas</h2>
+            <h3 class="pasos">Paso 1</h3>
+            <label class="pasos_instruccion">_Seleccione el Concierto:</label>
+        </div>
+        <div class="paso1">
+            <select id="concierto">
+                <option value="">Seleccionar concierto</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- paso2 -->
+    <div id="paso2" class="no_mostrar">
+        <h3 class="pasos">Paso 2</h3>
+        <label class="pasos_instruccion">_Seleccione Fecha </label>
+
+        <div class="selectores">
+            <select id="fecha_concierto">
+            </select>
+        </div>
+    </div>
+
+    <!-- paso3 -->
+    <div id="paso3" class="no_mostrar">
+        <h3 class="pasos">Paso 3</h3>
+        <label class="pasos_instruccion">_Seleccione Cantidad de Entradas</label>
+
+        <div class="selectores" id="contendor_entradas">
+            <select id="cantidad_entradas">
+                <option value="0" selected>Seleccione una cantidad</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <p id="cantidad_parrafo" class="no_mostrar">*La cantidad de entradas ingresadas no se encuentra disponible.</p>
+
+        <!-- siguiente -->
+        <div id="siguiente" class="boton no_mostrar">
+            <button id="boton_siguiente" type="button">Siguiente</button>
+        </div>
+
+    </div>
+
+    <!-- paso 4 -->
+    <div id="paso4" class="no_mostrar">
+        <div class="contenedor_datos">
+            <div>
+                <img src="img/flores.jpg">
+            </div>
+            <div class="form">
+                <form id="datosPersona" class="datos">
+                    <div>
+                        <div id="contenedor_input_nombre">
+                            <label>Nombre:</label>
+                            <input type="text" id="nombre" autocomplete="off" placeholder="Ingrese su nombre..." required>
+                        </div>
+
+                        <div id="contenedor_input_apellido">
+                            <label>Apellido:</label>
+                            <input type="text" id="apellido" autocomplete="off" placeholder="Ingrese su apellido...">
+                        </div>
+                            
+                        <div id="contenedor_input_telefono">
+                            <label>Telefono:</label>
+                            <input type="number" id="telefono" autocomplete="off" placeholder="Ingrese su telefono...">
+                        </div>
+                        
+                        <div id="contenedor_input_email">
+                            <label>Correo:</label>
+                        <input type="email" id="email" pattern=".+@globex\.com" autocomplete="off"
+                            placeholder="Ingrese su correo...">
+                        </div>
+                        
+    
+                        <button type="submit" class="boton_siguiente" id="boton_paso4">Siguiente</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- paso 5 -->
+    <div id="paso5" class="no_mostrar">
+        <div class="contenedor_pago">
+            <div class="form">
+                <form id="pago" class="pago datos">
+                    <div>
+                        <label>Medio de pago:</label>
+                        <div id="contenedor_tarjeta">
+                            <select id="medio_pago">
+                                <option value="" disabled selected>Tarjeta</option>
+                                <option value="Visa">Visa</option> 
+                                <option value="Mastercard">Mastercard</option> 
+                            </select>
+                        </div>
+
+
+                        <div id="contenedor_numero_tarjeta">
+                            <label>Número de Tarjeta:</label>
+                            <input type="number" id="numero_tarjeta" autocomplete="off" placeholder="Los 16 dígitos">
+                        </div>
+
+                        <div id="contenedor_codigo_seguridad">
+                            <label>Código de Seguridad:</label>
+                            <input type="number" id="codigo_seguridad" autocomplete="off" placeholder="Los 3 dígitos">
+                        </div>
+
+                        <div id="contenedor_titular_tarjeta">
+                            <label>Titular de la tarjeta:</label>
+                            <input type="text" id="titular_tarjeta" autocomplete="off" placeholder="Ingrese titular">    
+                        </div>
+                        
+                        <label>Vencimiento:</label>
+                        <select id="mes_tarjeta">
+                            <option value="0" disabled selected>Mes</option>
+                        </select>
+                        <select id="año_tarjeta">
+                        </select>
+                    </div>
+
+                    <button type="submit" class="boton_pagar" id="pagar">Pagar</button>
+                </form>
+            </div>
+            <div id="muestra_datos">
+                <h4>Resumen de Compra:</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- finalizar compra -->
+    <div id="finalizar_compra" class="no_mostrar">
+        <div class="finalizar_compra">
+            <div id="finalizar_compra_contenedor">
+                <i class="fa-solid fa-circle-check finalizar_compra_icon"></i>
+                <p class="finalizar_compra_texto">¡Gracias Por Tu Compra!</p>
+            </div>
+            <p class="finalizar_compra_aviso">A continuación, recibira toda la información a su cuenta de correo. ¡A disfrutar de la música! </p>
+        </div>
+        <div class="volver">
+            <a href="#" class="volver_link" id="volver" ><i class="fa-solid fa-arrow-left volver_icon"></i> Volver al inicio...</a>
+        </div>
+    </div>
+
+    <!-- separacion -->
+    <div class="separacion">
+        <p>Se parte de esta <strong class="nosotros_marca">familia</strong>.</p>
+    </div>
+
+    <!-- footer -->
+    <footer id="footer">
+        <div class="footer_caja">
+            <div class="footer_caja_logo">
+                <img src="img/logoPalabraN&B.png"
+                    alt="Logo de DepartamentoBa, inspirado en unas teclas de piano, junto a la palabra departamento">
+            </div>
+
+            <div class="footer_caja_indice">
+                <p class="footer_indice_parrafo">Indice</p>
+                <ul class="footer_link ">
+                    <li class="footer_items">
+                        <a href="#" class="active footer_links">Inicio</a>
+                    </li>
+                    <li class="footer_items">
+                        <a href="#boleteria" class="active footer_links">Boleteria</a>
+                    </li>
+                    <li class="footer_items">
+                        <a href="#boton_comprar" class="footer_links">Comprar Boletos</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer_caja_ubicacion">
+                <p class="footer_ubicacion_parrafo">ubicacion</p>
+                <i class="fa-sharp fa-solid fa-location-dot footer_ubicacion_icono"></i>
+                <p class="footer_ubicacion_calle">AV. Unacalle 1123 - C.A.B.A</p>
+            </div>
+
+            <div class="redes">
+                <a href="#" class="redes_link">
+                    <i class="fa-brands fa-instagram redes_link_icono bote"></i>
+                </a>
+                <a href="#" class="redes_link">
+                    <i class="fa-regular fa-envelope redes_link_icono bote"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer_caja2">
+            <p>
+                <small> 2021 - Magali Caceres - Todos los Derechos Reservados</small>
+            </p>
+        </div>
+
+
+    </footer>
+
+    <!-- JS -->
+    <script src="src/modelos/Concierto.js"></script>
     <script src="js/index.js"></script>
 </body>
+
 </html>

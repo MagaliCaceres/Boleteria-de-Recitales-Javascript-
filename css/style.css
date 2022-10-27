@@ -1,15 +1,631 @@
-*{
+/* Fuente POPPINS*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
 }
 
-body{
+body {
+    min-height: 100vh;
     background-color: #000;
 }
 
 
-h1 {
+
+/* barra de navegación */
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#logo_imagen {
+    height: 70px;
+}
+
+.nav_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_items {
+    margin-left: 20px;
+}
+
+.nav_links {
+    padding: 6px 15px;
+    color: #fff;
+    /* font-size: 18px; */
+    border-radius: 20px;
+}
+
+.nav_links:hover,
+.nav_links.active {
+    background-color: #fff;
+    color: #000;
+}
+
+#comprar_entradas{
+    padding: 6px 15px;
+    background: rgb(73, 80, 135);
+    border-radius: 20px;
+}
+
+#comprar_entradas:hover{
+    background: rgb(51, 56, 94);
+
+}
+
+.nav_links_comprar {
     color: #fff;
 }
+
+
+
+
+
+/* main */
+
+#presentacion_img {
+    margin-top: 50px;
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.presentacion_textos {
+    color: #fff;
+    margin-top: -100px;
+    padding: 10px;
+    text-align: center;
+}
+
+.titulo_marca,
+.presentacion_parrafo {
+    color: rgb(70, 77, 127);
+}
+
+
+
+
+
+/* into */
+
+#intro {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro_parrafo {
+    color: #fff;
+    font-style: italic;
+    font-size: 25px;
+}
+
+
+
+
+
+
+/* nosotros */
+
+#nosotros {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/fondo.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.nosotros_contenedor {
+    color: #fff;
+    padding: 25px;
+    width: 50%;
+}
+
+.nosotros_img {
+    width: 70%;
+    margin-left: 60px;
+}
+
+.nosotros_parrafo {
+    font-style: italic;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.nosotros_marca {
+    color: rgb(46, 51, 82);
+}
+
+
+
+
+
+/* boleteria */
+
+#boleteria {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#boleteria h2,
+#comprar h2{
+    color: #fff;
+    font-style: italic;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.conciertos_contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px;
+}
+
+.concierto_img {
+    display: block;
+    margin: auto;
+    width: 40%;
+    border-top-right-radius: 20px;
+    filter: drop-shadow(2px 2px 5px  rgba(255, 255, 255, 0.976));
+}
+
+.concierto_info{
+    width: 100%;
+}
+
+
+.concierto_nombre{
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.artista{
+    color: rgb(125, 135, 213);
+}
+
+
+
+
+
+/* boton comprar */
+
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#boton_comprar,
+#boton_siguiente{
+    padding: 6px 15px;
+    background: rgb(73, 80, 135);
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+}
+
+
+
+
+/* comprar entradas */
+
+.no_mostrar {
+    display: none;
+}
+
+#comprar h2{
+    font-size: 35px;
+    margin-left: 10px;
+}
+
+.pasos{
+    color: #fff;
+    font-size: 30px;
+    color: rgb(46, 51, 82);
+    margin-left: 50px;
+}
+
+.pasos_instruccion{
+    color: #fff;
+    font-size: 20px;
+    color: #fff;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.paso1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#concierto,
+#fecha_concierto,
+#cantidad_entradas{
+    padding: 20px;
+    width: 50%;
+    border-top-left-radius: 20px;
+    font-size: 18px;
+    background: rgb(73, 80, 135); 
+    color: #fff;
+    cursor: pointer;
+}
+
+.selectores{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+#cantidad_parrafo{
+    color: red;
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 80%;
+}
+
+.contenedor_datos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgb(73, 80, 135); 
+}
+
+.contenedor_pago{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgb(73, 80, 135); 
+}
+
+
+.contenedor_datos img{
+    width: 60%;
+    margin-left: 60px;
+}
+
+.contenedor_pago img{
+    width: 60%;
+}
+
+.pago{
+    padding-left: 10px;
+}
+
+.form{
+    width: 50%;
+    color: #fff;
+}
+
+#contenedor_input_nombre,
+#contenedor_input_apellido,
+#contenedor_input_telefono,
+#contenedor_input_email{
+    margin-bottom: 10px;
+}
+
+.datos label{
+    font-size: 18px;
+    display: block;
+}
+
+.datos input{
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    padding: 20px;
+    border-radius: 8px ;
+    border: #fff;
+}
+
+.texto_validar{
+    color: #000;
+}
+
+.boton_siguiente{
+    padding: 10px;
+    border-radius: 30px;
+    background: #000; 
+    color: #fff;
+    cursor: pointer;
+    width: 50%;
+    margin: 0px 25%;
+    font-size: 18px;
+}
+
+.boton_siguiente:hover{
+    color: rgb(73, 80, 135);
+}
+
+
+#pago select{
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border-color: #fff;
+}
+
+#pago input{
+    margin-bottom: 10px;
+}
+
+#muestra_datos{
+    padding: 20px;
+    background-color: #000;
+    border-radius: 6px;
+    width: 40%;
+}
+
+
+
+#muestra_datos h4{
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: -40px;
+}
+
+.parrafo_datos{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.parrafo_datos_color{
+    color: rgb(73, 80, 135);
+    text-align: center;
+    font-size: 20px;
+}
+
+.parrafo_datos_color_total{
+    background: rgb(73, 80, 135);
+    color: #fff;
+    text-align: center;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.boton_pagar{
+    margin: 20px;
+    padding: 6px 15px;
+    background: #000;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    width: 50%;
+}
+
+
+.boton_pagar:hover{
+    color: rgb(73, 80, 135);
+}
+
+
+
+
+/* finalizar compra */
+.finalizar_compra{
+    margin: auto;
+    width: 70%;
+    height: 180px;
+    background-color: rgb(73, 80, 135);
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+#finalizar_compra_contenedor{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.finalizar_compra_icon{
+    color: rgb(80, 237, 82);
+    font-size: 70px;
+    padding: 10px;
+    margin-top: 40px;
+    margin-left: 20px;
+    width: 10%;
+    
+}
+
+.finalizar_compra_texto{
+    font-size: 40px;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.finalizar_compra_aviso{
+    color: #fff;
+    margin-left: 120px;
+    margin-top: -10px;
+}
+
+.volver{
+    display: flex;
+    justify-content: end;
+    width: 85%;
+}
+
+.volver_icon{
+    color: #fff;
+    padding: 10px;
+}
+
+.volver_link{
+    color: #fff;
+    margin-top: 20px;
+}
+
+.volver_link:hover,
+.volver_icon:hover{
+    color: rgb(73, 80, 135);
+}
+
+
+
+
+
+/* separacion */
+.separacion{
+    height: 70px;
+    margin-top: 50px;
+    background-image: url(../img/fondo.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.separacion p{
+    color: #000;
+    font-style: italic;
+}
+
+
+
+
+
+
+/* footer */
+#footer{
+    margin-top: 50px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);;
+}
+
+.footer_caja{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer_caja_logo img{
+    width: 60%;
+}
+
+.footer_indice_parrafo,
+.footer_ubicacion_parrafo{
+    color: rgb(73, 80, 135);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer_links {
+    color: #fff;
+    font-style: italic;
+}
+
+.footer_links:hover {
+    color: rgb(73, 80, 135);
+    
+}
+
+.footer_ubicacion_icono{
+    color: #fff;
+}
+
+.footer_ubicacion_calle{
+    color: #fff;
+    display: inline;
+}
+
+.redes{
+    text-align: center;
+    margin-left: 130px;
+    margin-top: 40px;
+}
+
+.redes_link{
+    color: rgb(73, 80, 135);
+    font-size: 40px;
+    padding: 10px;
+}
+
+.redes_link:hover{
+    color: #fff;
+}
+
+/* animacion para los iconos de las redes del footer */
+.bote:hover {
+    -webkit-animation: 2s bote infinite;
+    animation: 2s bote infinite;
+}
+
+@-webkit-keyframes bote {
+
+    20%,
+    50%,
+    80% {
+        -webkit-transform: translateY(20);
+    }
+
+    65% {
+        -webkit-transform: translateY(-20px);
+    }
+}
+
+@keyframes bote {
+
+    20%,
+    50%,
+    80% {
+        -webkit-transform: translateY(20);
+    }
+
+    65% {
+        -webkit-transform: translateY(-20px);
+    }
+}
+
+.footer_caja2{
+    background-image: url(../img/fondo.png);
+    background-size: cover;
+    background-position: center;
+    color: rgb(73, 80, 135);
+    padding: 8px;
+    text-align: center;
+}
+
