@@ -171,16 +171,7 @@ function mostrarDatos() {
     });
 }
 
-/* function obtenerReservas() {
 
-//     const reservasLS = localStorage.getItem("reservas");
-
-//     if (reservasLS !== null) {
-//         return JSON.parse(reservasLS);
-//     }
-
-//     return [];
-} */
 
 // funcion que valida los datos ingresados de la persona, en donde le paso por parametro sus datos.
 function validarDatosDeLaPersona(nombre, apellido, telefono, email) {
@@ -277,7 +268,7 @@ function validarDatosDeLaPersona(nombre, apellido, telefono, email) {
 }
 
 // funcion que valida los datos ingresados de la tarjeta, en donde le paso por parametro sus datos.
-function validarDatosDeLaTarjeta(selectorTarjeta, numeroTarjeta, codigoDeSeguridad, titular, selectorMesTarjeta) {
+function validarDatosDeLaTarjeta(selectorTarjeta, numeroTarjeta, codigoDeSeguridad, titular, tarjetaMes, tarjetaAnio) {
 
     let todoCorrecto = true;
 
@@ -366,19 +357,33 @@ function validarDatosDeLaTarjeta(selectorTarjeta, numeroTarjeta, codigoDeSegurid
 
 
     // si el usuario selecciona el valor por defecto creo el elemento DOM que avisa al usuario que seleccionar una opción valida
-    if (selectorMesTarjeta == null || selectorMesTarjeta == 0) {
+
+    const mesActual = new Date().getMonth();
+
+    if (tarjetaMes == null || tarjetaMes == 0) {
 
         const mesInvalido = document.createElement("small");
         mesInvalido.innerText = `*Elija una opción.`;
         mesInvalido.className = "texto_validar";
 
-        selectorMesTarjeta.append(mesInvalido);
+        contenedorVencimientoTarjeta.append(mesInvalido);
+
+        todoCorrecto = false;
+
+    }else if(((parseInt(tarjetaMes) -1) < mesActual) && ((parseInt(tarjetaAnio) === añoActual))){
+
+        const mesInvalido = document.createElement("small");
+        mesInvalido.innerText = `*La opcion no es correcta.`;
+        mesInvalido.className = "texto_validar";
+
+        contenedorVencimientoTarjeta.append(mesInvalido);
 
         todoCorrecto = false;
     }
 
     return todoCorrecto;
 }
+
 
 
 // OBJETOS
@@ -399,15 +404,46 @@ listaConciertos.push(new Concierto("Delfina Mancardo - OCTANTE", "29/01/2023", "
 
 listaConciertos.push(new Concierto("KND - Bonnefaid", "20/01/2023", "21:00", 1200, "AV. Unacalle 1123 - C.A.B.A", 500));
 
+const listaDeConcierto = actualizarEntradas();
+
 
 
 // VARIABLES GLOBALES
+
+const concierto1 = document.getElementById("concierto1_img");
+const info_concierto1 = document.getElementById("info_concierto1");
+const salirInfo1 = document.getElementById("cruz_icono1");
+
+const concierto2 = document.getElementById("concierto2_img");
+const info_concierto2 = document.getElementById("info_concierto2");
+const salirInfo2 = document.getElementById("cruz_icono2");
+
+const concierto3 = document.getElementById("concierto3_img");
+const info_concierto3 = document.getElementById("info_concierto3");
+const salirInfo3 = document.getElementById("cruz_icono3");
+
+const concierto4 = document.getElementById("concierto4_img");
+const info_concierto4 = document.getElementById("info_concierto4");
+const salirInfo4 = document.getElementById("cruz_icono4");
+
+const concierto5 = document.getElementById("concierto5_img");
+const info_concierto5 = document.getElementById("info_concierto5");
+const salirInfo5 = document.getElementById("cruz_icono5");
+
+const concierto6 = document.getElementById("concierto6_img");
+const info_concierto6 = document.getElementById("info_concierto6");
+const salirInfo6 = document.getElementById("cruz_icono6");
+
+
 
 const botonComprar = document.getElementById("boton_comprar");
 const botonSiguiente = document.getElementById("boton_siguiente");
 const formularioDatos = document.getElementById("boton_paso4");
 const formularioPago = document.getElementById("pagar");
 const recargaPagina = document.getElementById("volver");
+
+const boleteria = document.getElementById("boleteria");
+const nosotros = document.getElementById("nosotros");
 
 const paso1 = document.getElementById("paso1");
 const paso2 = document.getElementById("paso2");
@@ -424,7 +460,7 @@ const seleccionFecha = document.getElementById("fecha_concierto");
 const seleccionCantidadEntradas = document.getElementById("cantidad_entradas");
 const selectorTarjeta = document.getElementById("medio_pago");
 const selectorMesTarjeta = document.getElementById("mes_tarjeta");
-const selectorAnioTarjeta = document.getElementById("año_tarjeta");
+const selectorAnioTarjeta = document.getElementById("anio_tarjeta");
 
 const inputNombre = document.getElementById("nombre");
 const inputApellido = document.getElementById("apellido");
@@ -442,8 +478,9 @@ const contenedorTarjeta = document.getElementById("contenedor_tarjeta");
 const contenedorNumeroDeTarjeta = document.getElementById("contenedor_numero_tarjeta");
 const contenedorCodigoDeSeguridad = document.getElementById("contenedor_codigo_seguridad");
 const contenedorTitularTarjeta = document.getElementById("contenedor_titular_tarjeta");
+const contenedorVencimientoTarjeta = document.getElementById("contenedor_vencimiento_tarjeta");
 
-const listaDeConcierto = actualizarEntradas();
+
 
 
 // CREACION DE NODOS DOM
@@ -480,13 +517,124 @@ for (let i = añoActual; i <= añoActual + 10; i++) {
     selectorAnioTarjeta.append(opcion);
 }
 
+
+
+
+
+
 // EVENTOS
+
+// mostrar info de los conciertos
+
+// cuando hago click en la imagen del cocierto 1
+concierto1.addEventListener("click", () =>{
+
+    // muestro la información completa
+    info_concierto1.classList.remove("no_mostrar");
+    info_concierto1.className = ("info_completa");
+});
+
+// cuando hago click en la cruz de salir
+salirInfo1.addEventListener("click", () => {
+
+    // oculto la información completa
+    info_concierto1.className = "no_mostrar";
+});
+
+
+// cuando hago click en la imagen del cocierto 2
+concierto2.addEventListener("click", () =>{
+
+    // muestro la información completa
+    info_concierto2.classList.remove("no_mostrar");
+    info_concierto2.className = ("info_completa");
+});
+
+// cuando hago click en la cruz de salir
+salirInfo2.addEventListener("click", () => {
+
+    // oculto la información completa
+    info_concierto2.className = "no_mostrar";
+});
+
+
+// cuando hago click en la imagen del cocierto 3
+concierto3.addEventListener("click", () =>{
+
+    // muestro la información completa
+    info_concierto3.classList.remove("no_mostrar");
+    info_concierto3.className = ("info_completa");
+});
+
+// cuando hago click en la cruz de salir
+salirInfo3.addEventListener("click", () => {
+
+    // oculto la información completa
+    info_concierto3.className = "no_mostrar";
+});
+
+
+// cuando hago click en la imagen del cocierto 4
+concierto4.addEventListener("click", () =>{
+
+    // muestro la información completa
+    info_concierto4.classList.remove("no_mostrar");
+    info_concierto4.className = ("info_completa");
+});
+
+// cuando hago click en la cruz de salir
+salirInfo4.addEventListener("click", () => {
+
+    // oculto la información completa
+    info_concierto4.className = "no_mostrar";
+});
+
+
+// cuando hago click en la imagen del cocierto 5
+concierto5.addEventListener("click", () =>{
+
+    // muestro la información completa
+    info_concierto5.classList.remove("no_mostrar");
+    info_concierto5.className = ("info_completa");
+});
+
+// cuando hago click en la cruz de salir
+salirInfo5.addEventListener("click", () => {
+
+    // oculto la información completa
+    info_concierto5.className = "no_mostrar";
+});
+
+
+// cuando hago click en la imagen del cocierto 5
+concierto6.addEventListener("click", () =>{
+
+    // muestro la información completa
+    info_concierto6.classList.remove("no_mostrar");
+    info_concierto6.className = ("info_completa");
+});
+
+// cuando hago click en la cruz de salir
+salirInfo6.addEventListener("click", () => {
+
+    // oculto la información completa
+    info_concierto6.className = "no_mostrar";
+});
+
+
+
+
+
+
 
 // cuando el usuario haga clik en el boton de "comprar entradas" 
 botonComprar.addEventListener("click", () => {
 
     // elimino la clase "no_mostrar" al paso 1 (selector de concierto)
     paso1.classList.remove('no_mostrar');
+    botonComprar.className = "no_mostrar";
+    boleteria.className = "no_mostrar";
+    nosotros.className = "no_mostrar";
 });
 
 
@@ -659,13 +807,14 @@ formularioPago.addEventListener("click", (event) => {
     const codigoDeSeguridadTarjeta = inputCodigoDeSeguridadTarjeta.value;
     const titularTarjeta = inputTitularDeLaTarjeta.value;
     const vencimientoTarjetaMes = selectorMesTarjeta.value;
-    // const vencimientoTarjetaAnio = selectorAnioTarjeta.value;
+    const vencimientoTarjetaAnio = selectorAnioTarjeta.value;
 
     // si los datos ingresados son correctos en su validación
-    if (validarDatosDeLaTarjeta(tarjetaElegida, numeroDeTarjeta, codigoDeSeguridadTarjeta, titularTarjeta, vencimientoTarjetaMes)) {
+    if (validarDatosDeLaTarjeta(tarjetaElegida, numeroDeTarjeta, codigoDeSeguridadTarjeta, titularTarjeta, vencimientoTarjetaMes, vencimientoTarjetaAnio)) {
+
         
-        // muestro el mensaje de compra realizada.
-        finalizarCompra.classList.remove('no_mostrar');
+        // guardo la lista de conciertos nuevamente en el localStorage
+        localStorage.setItem("lista_conciertos",JSON.stringify(listaConciertos));
 
         // Limpiar inputs
         selectorTarjeta.value = "";
@@ -675,18 +824,18 @@ formularioPago.addEventListener("click", (event) => {
         selectorMesTarjeta.value = "";
         selectorAnioTarjeta.value = "";
 
+        // alerta de compra finalizada.
+        Swal.fire({
+            title: '¡Gracias Por Tu Compra!',
+            text:'A continuación, recibira toda la información a su cuenta de correo.',
+            icon: 'success',
+            confirmButtonText: 'Volver'
+        }).then((result) => {
             
-        // oculto el paso 5 (ingresa datos de medio de pago)
-        paso5.className = ("no_mostrar");
-        botonComprar.className = ("no_mostrar");
+                if(result.isConfirmed || result.isDismissed) {
+                    location.reload();
+                }
+            });
 
-
-        // guardo la lista de conciertos nuevamente en el localStorage
-        localStorage.setItem("lista_conciertos",JSON.stringify(listaConciertos));
     }
 });
-
-recargaPagina.addEventListener('click', _ => {
-
-    location.reload();
-})

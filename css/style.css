@@ -10,6 +10,10 @@
     text-decoration: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
     background-color: #000;
@@ -17,7 +21,7 @@ body {
 
 
 
-/* barra de navegación */
+/* BARRA DE NAVEGACION*/
 nav {
     position: absolute;
     top: 0;
@@ -75,7 +79,7 @@ nav {
 
 
 
-/* main */
+/* MAIN */
 
 #presentacion_img {
     margin-top: 50px;
@@ -101,7 +105,7 @@ nav {
 
 
 
-/* into */
+/* INTRO */
 
 #intro {
     height: 200px;
@@ -121,7 +125,7 @@ nav {
 
 
 
-/* nosotros */
+/* NOSOTROS */
 
 #nosotros {
     display: flex;
@@ -159,7 +163,7 @@ nav {
 
 
 
-/* boleteria */
+/* BOLETERIA */
 
 #boleteria {
     padding: 20px;
@@ -186,6 +190,7 @@ nav {
     width: 40%;
     border-top-right-radius: 20px;
     filter: drop-shadow(2px 2px 5px  rgba(255, 255, 255, 0.976));
+    cursor: pointer;
 }
 
 .concierto_info{
@@ -205,10 +210,113 @@ nav {
 }
 
 
+/* .swal2-popup {
+    height: 800px ;
+} */
+
+.info_completa{
+    position: absolute;
+    z-index: 100;
+    width: 95%;
+    display: flex;
+    justify-content:space-between;
+    background-color: rgb(33, 37, 70);
+    border-top-right-radius: 30px;
+}
+
+.cruz{
+    display: flex;
+    justify-content: end;
+}
+
+.cruz_icono{
+    padding: 20px;
+    font-size: 40px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.cruz_icono:hover{
+    color: #000;
+}
+
+.info_completa iframe{
+    padding: 20px;
+    border-top-right-radius: 30px;
+}
+
+.info_completa img{
+    margin: auto;
+    width: 40%;
+    height: 40%;
+    padding: 50px;
+}
+
+.info_completa_texto{
+    color: rgb(255, 255, 255);
+}
+
+.titulo_info{
+    font-size: 30px;
+    color: rgb(165, 173, 234);
+    margin-top: 10px;
+    padding-right: 100px;
+}
+
+.parrafo_info{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 
 
-/* boton comprar */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BOTON COMPRAR */
 
 .boton{
     display: flex;
@@ -230,7 +338,7 @@ nav {
 
 
 
-/* comprar entradas */
+/* COMPRAR ENTRADAS */
 
 .no_mostrar {
     display: none;
@@ -437,72 +545,9 @@ nav {
 
 
 
-/* finalizar compra */
-.finalizar_compra{
-    margin: auto;
-    width: 70%;
-    height: 180px;
-    background-color: rgb(73, 80, 135);
-    margin-top: 30px;
-    border-radius: 20px;
-}
-
-#finalizar_compra_contenedor{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-}
-
-.finalizar_compra_icon{
-    color: rgb(80, 237, 82);
-    font-size: 70px;
-    padding: 10px;
-    margin-top: 40px;
-    margin-left: 20px;
-    width: 10%;
-    
-}
-
-.finalizar_compra_texto{
-    font-size: 40px;
-    color: #fff;
-    width: 100%;
-    padding: 10px;
-    margin-top: 40px;
-}
-
-.finalizar_compra_aviso{
-    color: #fff;
-    margin-left: 120px;
-    margin-top: -10px;
-}
-
-.volver{
-    display: flex;
-    justify-content: end;
-    width: 85%;
-}
-
-.volver_icon{
-    color: #fff;
-    padding: 10px;
-}
-
-.volver_link{
-    color: #fff;
-    margin-top: 20px;
-}
-
-.volver_link:hover,
-.volver_icon:hover{
-    color: rgb(73, 80, 135);
-}
 
 
-
-
-
-/* separacion */
+/* SEPARACION */
 .separacion{
     height: 70px;
     margin-top: 50px;
@@ -525,7 +570,7 @@ nav {
 
 
 
-/* footer */
+/* FOOTER */
 #footer{
     margin-top: 50px;
     width: 100%;
@@ -588,7 +633,7 @@ nav {
     color: #fff;
 }
 
-/* animacion para los iconos de las redes del footer */
+/* ANIMACIONES PARA LOS ICONOS DE LAS REDES DEL FOOTER */
 .bote:hover {
     -webkit-animation: 2s bote infinite;
     animation: 2s bote infinite;

@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Libreria animaciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Titulo -->
     <title>DepartamentoBa</title>
     <!-- CSS -->
@@ -45,13 +47,6 @@
                 <li class="nav_items" id="comprar_entradas">
                     <a href="#boton_comprar" class="nav_links_comprar">Comprar Boletos</a>
                 </li>
-                <!-- botones de inicio sesion y registro -->
-                <!-- <li class="nav_items" id="inicio_sesion">
-                    <a href="#" class="nav_links_user">Entrar</a>
-                </li>
-                <li class="nav_items" id="registrarse">
-                    <a href="#" class="nav_links_user">Registrarse</a>
-                </li> -->
             </ul>
         </nav>
     </header>
@@ -68,7 +63,7 @@
     </main>
 
     <!-- intro -->
-    <section id="intro">
+    <section id="intro" data-aos="fade-down">
         <p class="intro_parrafo">dpto.</p>
     </section>
 
@@ -84,7 +79,7 @@
             <p class="nosotros_parrafo">Una <strong class="nosotros_marca">familia.</strong></p>
         </div>
         <div class="nosotros_contenedor">
-            <img class="nosotros_img" src="img/nosotros.jpg"
+            <img class="nosotros_img" data-aos="flip-left" data-aos-duration="3000" src="img/nosotros.jpg"
                 alt="Acustico de dos artistas en DepartamentoBa, junto a una guitarra.">
         </div>
     </section>
@@ -96,55 +91,180 @@
         <div class="conciertos_contenedor">
 
             <!-- Concierto 1 -->
-            <article id="concierto1">
-                <img class="concierto_img" src="img/pazCarrara.jpg">
+            <article id="concierto1" data-aos="zoom-in" data-aos-duration="1000">
+                <img id="concierto1_img" class="concierto_img" src="img/pazCarrara.jpg">
                 <div class="concierto_info">
                     <p class="concierto_nombre"> <strong class="artista">Paz Carrara </strong> - Me canse de hacer
                         canciones (que no salgan si no estoy llorando)</p>
                 </div>
             </article>
 
+            <!-- Info Completa Concierto 1 -->
+            <div id="info_concierto1" class="info_completa no_mostrar">
+                <img src="img/PazCarraraInfo.jpg">
+                <div class="info_completa_texto">
+                    <div class="cruz">
+                        <i class="fa-solid fa-xmark cruz_icono" id="cruz_icono1"></i>
+                    </div>
+                    <p class="titulo_info">Paz Carrara - Me canse de hacer
+                        canciones <br> (que no salgan si no estoy llorando)</p>
+                    <p class="parrafo_info">Paz Carrara lanza su primer disco, cargada de un repertorio Pop, Folk,
+                        Indie; que propone contagiar la emoción de lo más genuino en su manera de componer y de
+                        escribir.</p>
+                    <p class="parrafo_info">¡No te lo pierdas!</p>
+                    <iframe
+                        src="https://open.spotify.com/embed/album/3BQJmgCqlUfOy6dfRytlsw?utm_source=generator&theme=0"
+                        width="100%" height="250" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+
             <!-- Concierto 2 -->
-            <article id="concierto2">
-                <img class="concierto_img" src="img/francoMasciarelli.jpg">
+            <article id="concierto2" data-aos="zoom-in" data-aos-duration="1000">
+                <img id="concierto2_img" class="concierto_img" src="img/francoMasciarelli.jpg">
                 <div class="concierto_info">
                     <p class="concierto_nombre"> <strong class="artista">Franco Masciarelli</strong> - Otro Sol</p>
                 </div>
             </article>
 
+            <!-- Info Completa Concierto 2-->
+            <div id="info_concierto2" class="info_completa no_mostrar">
+                <img src="img/FrancoMasciarelliInfo.jpg">
+                <div class="info_completa_texto">
+                    <div class="cruz">
+                        <i class="fa-solid fa-xmark cruz_icono" id="cruz_icono2"></i>
+                    </div>
+                    <p class="titulo_info">Franco Masciarelli - Otro Sol </p>
+                    <p class="parrafo_info">Franco Masciarelli, joven cantante, músico y compositor, lanza su primer
+                        disco; en donde nos comparte el resultado de un proceso de transformación: nueve canciones que
+                        suena al Río de La Plata aunque con destellos de rock.</p>
+                    <p class="parrafo_info">¡No te lo pierdas!</p>
+                    <iframe
+                        src="https://open.spotify.com/embed/album/1W7hbdoLyy5MBMfDzGxv4R?utm_source=generator&theme=0"
+                        width="100%" height="250" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+
             <!-- Concierto 3 -->
-            <article id="concierto3">
-                <img class="concierto_img" src="img/paulaPrieto.jpg">
+            <article id="concierto3" data-aos="zoom-in" data-aos-duration="1000">
+                <img id="concierto3_img" class="concierto_img" src="img/paulaPrieto.jpg">
                 <div class="concierto_info">
                     <p class="concierto_nombre"> <strong class="artista">Paula Prieto </strong> - esto es para mi, || ep
                     </p>
                 </div>
             </article>
 
+            <!-- Info Completa Concierto 3-->
+            <div id="info_concierto3" class="info_completa no_mostrar">
+                <img src="img/PaulaPrietoInfo.jpg">
+                <div class="info_completa_texto">
+                    <div class="cruz">
+                        <i class="fa-solid fa-xmark cruz_icono" id="cruz_icono3"></i>
+                    </div>
+                    <p class="titulo_info">Paula Prieto - esto es para mi, || ep </p>
+                    <p class="parrafo_info">"esto es para mi" es el segundo trabajo discográfico de la cantante y
+                        compositora Paula Prieto. Conformado por 3 canciones, 4 escenas y 4 ‘casi’ canciones, es un
+                        disco profundamente personal que se vuelve universal en el momento en que se escucha y cada
+                        quién es recordado de cómo se sintió la primera vez que tuvo que aceptar un amor no
+                        correspondido.</p>
+                    <p class="parrafo_info">¡No te lo pierdas!</p>
+                    <iframe
+                        src="https://open.spotify.com/embed/album/6B6FGpRJCnTa7XBTgct5Qb?utm_source=generator&theme=0"
+                        width="100%" height="250" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+
             <!-- Concierto 4 -->
-            <article id="concierto4">
-                <img class="concierto_img" src="img/martinOliver.jpg">
+            <article id="concierto4" data-aos="zoom-in" data-aos-duration="1000">
+                <img id="concierto4_img" class="concierto_img" src="img/martinOliver.jpg">
                 <div class="concierto_info">
                     <p class="concierto_nombre"> <strong class="artista">Martin Oliver </strong> - COMO CREAR MONSTRUOS
                     </p>
                 </div>
             </article>
 
+
+            <!-- Info Completa Concierto 4-->
+            <div id="info_concierto4" class="info_completa no_mostrar">
+                <img src="img/MartinOliverInfo.jpg">
+                <div class="info_completa_texto">
+                    <div class="cruz">
+                        <i class="fa-solid fa-xmark cruz_icono" id="cruz_icono4"></i>
+                    </div>
+                    <p class="titulo_info">Martin Oliver - COMO CREAR MONSTRUOS </p>
+                    <p class="parrafo_info">Martín Oliver presenta su tercer disco: Cómo crear monstruos. Producido por
+                        Mateo Rodo y Ferlaflme, el álbum y sus siete canciones. Cómo crear monstruos en formato disco
+                        nace en plena pandemia y funciona como el "recorte de una época bastante turbulenta de la vida
+                        de Martín". La idea fue unir el universo digital de la producción -con el sampleo como
+                        protagonista- con el uso de instrumentos tradicionales en una obra que apuesta por las emociones
+                        honestas y dejar a un lado el ego.</p>
+                    <p class="parrafo_info">¡No te lo pierdas!</p>
+                    <iframe
+                        src="https://open.spotify.com/embed/album/7tJU3k7q05uAAqxAjJ35Yy?utm_source=generator&theme=0"
+                        width="100%" height="250" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+
+
             <!-- Concierto 5 -->
-            <article id="concierto5">
-                <img class="concierto_img" src="img/delfinaMancardo.jpg">
+            <article id="concierto5" data-aos="zoom-in" data-aos-duration="1000">
+                <img id="concierto5_img" class="concierto_img" src="img/delfinaMancardo.jpg">
                 <div class="concierto_info">
                     <p class="concierto_nombre"> <strong class="artista">Delfina Mancardo </strong> - OCTANTE</p>
                 </div>
             </article>
 
+            <!-- Info Completa Concierto 5-->
+            <div id="info_concierto5" class="info_completa no_mostrar">
+                <img src="img/DelfinaMancardoInfo.jpg">
+                <div class="info_completa_texto">
+                    <div class="cruz">
+                        <i class="fa-solid fa-xmark cruz_icono" id="cruz_icono5"></i>
+                    </div>
+                    <p class="titulo_info">Delfina Mancardo - OCTANTE</p>
+                    <p class="parrafo_info">Delfina presenta su album debut "OCTANTE", una obra conceptual que respira
+                        aires de jazz y búsqueda personal. El debut de Mancardo es una obra conceptual de ocho canciones
+                        empapadas de un aura folk y una bruma melancólica. Aunque el elemento principal sea la voz de la
+                        artista, se destaca el plano orquestal y musical llevado a cabo por la banda que la acompañó en
+                        este proyecto, compuesta por los músicos Martin Jota, Martin Lozano, Tomás Babjaczuk, Aurea
+                        Ensamble y Daniel Schnock, este último también productor del álbum.</p>
+                    <p class="parrafo_info">¡No te lo pierdas!</p>
+                    <iframe
+                        src="https://open.spotify.com/embed/album/1Cw8dcoeDHs9TVrGsxQGRJ?utm_source=generator&theme=0"
+                        width="100%" height="250" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+
             <!-- concierto 6 -->
-            <article id="concierto6">
-                <img class="concierto_img" src="img/KND.jpg">
+            <article id="concierto6" data-aos="zoom-in" data-aos-duration="1000">
+                <img id="concierto6_img" class="concierto_img" src="img/KND.jpg">
                 <div class="concierto_info">
                     <p class="concierto_nombre"> <strong class="artista">KND </strong> -Bonneafaid</p>
                 </div>
             </article>
+
+            <!-- Info Completa Concierto 6-->
+            <div id="info_concierto6" class="info_completa no_mostrar">
+                <img src="img/KNDInfo.jpg">
+                <div class="info_completa_texto">
+                    <div class="cruz">
+                        <i class="fa-solid fa-xmark cruz_icono" id="cruz_icono6"></i>
+                    </div>
+                    <p class="titulo_info">KND - Bonnefaid</p>
+                    <p class="parrafo_info">KND, presenta su primer disco de corta duración. Con un track de 7 canciones, donde nos hace viajar por un conjunto de experiencias y vivencias personales, con sonidos ambientales, guitarras acusticas que presentan la melancolia, y beats mezclados con r&b/soul que generan una melodía amigable y energica.</p>
+                    <p class="parrafo_info">¡No te lo pierdas!</p>
+                    <iframe src="https://open.spotify.com/embed/album/2ZlhWChvFuCfmyRIfgs6lL?utm_source=generator&theme=0" width="100%" height="250" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -222,26 +342,27 @@
                     <div>
                         <div id="contenedor_input_nombre">
                             <label>Nombre:</label>
-                            <input type="text" id="nombre" autocomplete="off" placeholder="Ingrese su nombre..." required>
+                            <input type="text" id="nombre" autocomplete="off" placeholder="Ingrese su nombre..."
+                                required>
                         </div>
 
                         <div id="contenedor_input_apellido">
                             <label>Apellido:</label>
                             <input type="text" id="apellido" autocomplete="off" placeholder="Ingrese su apellido...">
                         </div>
-                            
+
                         <div id="contenedor_input_telefono">
                             <label>Telefono:</label>
                             <input type="number" id="telefono" autocomplete="off" placeholder="Ingrese su telefono...">
                         </div>
-                        
+
                         <div id="contenedor_input_email">
                             <label>Correo:</label>
-                        <input type="email" id="email" pattern=".+@globex\.com" autocomplete="off"
-                            placeholder="Ingrese su correo...">
+                            <input type="email" id="email" pattern=".+@globex\.com" autocomplete="off"
+                                placeholder="Ingrese su correo...">
                         </div>
-                        
-    
+
+
                         <button type="submit" class="boton_siguiente" id="boton_paso4">Siguiente</button>
                     </div>
                 </form>
@@ -259,8 +380,8 @@
                         <div id="contenedor_tarjeta">
                             <select id="medio_pago">
                                 <option value="" disabled selected>Tarjeta</option>
-                                <option value="Visa">Visa</option> 
-                                <option value="Mastercard">Mastercard</option> 
+                                <option value="Visa">Visa</option>
+                                <option value="Mastercard">Mastercard</option>
                             </select>
                         </div>
 
@@ -277,15 +398,17 @@
 
                         <div id="contenedor_titular_tarjeta">
                             <label>Titular de la tarjeta:</label>
-                            <input type="text" id="titular_tarjeta" autocomplete="off" placeholder="Ingrese titular">    
+                            <input type="text" id="titular_tarjeta" autocomplete="off" placeholder="Ingrese titular">
                         </div>
-                        
+
                         <label>Vencimiento:</label>
-                        <select id="mes_tarjeta">
-                            <option value="0" disabled selected>Mes</option>
-                        </select>
-                        <select id="año_tarjeta">
-                        </select>
+                        <div id="contenedor_vencimiento_tarjeta">
+                            <select id="anio_tarjeta"></select>
+                            <select id="mes_tarjeta">
+                                <option value="" disabled selected>Mes</option>
+                            </select>
+                        </div>
+
                     </div>
 
                     <button type="submit" class="boton_pagar" id="pagar">Pagar</button>
@@ -294,20 +417,6 @@
             <div id="muestra_datos">
                 <h4>Resumen de Compra:</h4>
             </div>
-        </div>
-    </div>
-
-    <!-- finalizar compra -->
-    <div id="finalizar_compra" class="no_mostrar">
-        <div class="finalizar_compra">
-            <div id="finalizar_compra_contenedor">
-                <i class="fa-solid fa-circle-check finalizar_compra_icon"></i>
-                <p class="finalizar_compra_texto">¡Gracias Por Tu Compra!</p>
-            </div>
-            <p class="finalizar_compra_aviso">A continuación, recibira toda la información a su cuenta de correo. ¡A disfrutar de la música! </p>
-        </div>
-        <div class="volver">
-            <a href="#" class="volver_link" id="volver" ><i class="fa-solid fa-arrow-left volver_icon"></i> Volver al inicio...</a>
         </div>
     </div>
 
@@ -364,9 +473,17 @@
 
     </footer>
 
+    <!-- LIBRERIA JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>;
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
     <!-- JS -->
     <script src="src/modelos/Concierto.js"></script>
     <script src="js/index.js"></script>
+
 </body>
 
 </html>
