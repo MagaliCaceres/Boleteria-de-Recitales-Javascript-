@@ -20,6 +20,19 @@ body {
 }
 
 
+#ingresar_personal{
+    color: rgb(113, 113, 113);
+    background-color: #000;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+#ingresar_personal:hover{
+    color: #fff;
+
+}
+
+
 
 /* BARRA DE NAVEGACION*/
 nav {
@@ -74,7 +87,6 @@ nav {
 .nav_links_comprar {
     color: #fff;
 }
-
 
 
 
@@ -674,3 +686,152 @@ nav {
     text-align: center;
 }
 
+
+
+
+
+/* INGRESO PERSONAL */
+
+.personal{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.personal_titulo{
+    color: #fff;
+    font-size: 40px;
+}
+
+#contenedor_ingreso_del_personal div{
+    margin: 0 100px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+#contenedor_contrasenia_del_personal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(73, 80, 135); 
+    height: 100px;
+}
+
+#contenedor_contrasenia_del_personal label{
+    color: #fff;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+#contenedor_contrasenia_del_personal input{
+    padding-left: 20px;
+    margin-left: 20px;
+    height: 40px;
+    width: 60%;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-color: transparent;
+}
+
+#ingreso_personal{
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: #000;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+#ingreso_personal:hover{
+    color: rgb(73, 80, 135);;
+}
+
+#registro_personal{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+#datos_registo_personal,
+#inicar_sesion_personal{
+    background: rgb(73, 80, 135); 
+    padding: 30px;
+    border-top-right-radius: 30px;
+    width: 500px;   
+}
+
+
+#datos_registo_personal h2,
+#inicar_sesion_personal h2{
+    padding-left: 20px;
+    margin-bottom: -5px;
+    font-size: 25px;
+    color: #fff;
+}
+
+#datos_registo_personal label,
+#inicar_sesion_personal label{
+    font-size: 16px;
+    display: block;
+    color: #fff;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+#datos_registo_personal input,
+#inicar_sesion_personal input{
+    padding-left: 20px;
+    margin-left: 20px;
+    height: 40px;
+    width: 90%;
+}
+
+#ingreso_de_personal,
+#personal_creado{
+    background-color: #000;
+    color: #fff;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+#ingreso_de_personal:hover,
+#personal_creado:hover{
+
+    color: rgb(73, 80, 135);
+
+}
+
+
+/* DATOS PARA EL PERSONAL */
+#tabla{
+    color: rgb(124, 135, 218);
+    margin-top: 200px;
+    width: 100%;
+}
+
+#tabla thead tr th {
+    text-align: left;
+    padding: 8px;
+    font-size: 20px;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.datos_tabla{
+    padding: 8px;
+    color: #fff;
+    border-right: 1px solid #fff;
+    text-align: center;
+}
+
+.datos_tabla_centro{
+    padding: 8px;
+    color: #fff;
+    border-right: 1px solid #fff;
+    text-align: left;
+}

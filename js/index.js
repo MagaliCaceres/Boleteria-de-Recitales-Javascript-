@@ -16,6 +16,9 @@ function actualizarEntradas(){
 
         // agrego la lista de conciertos al localStorage
         listaConciertos = JSON.parse(conciertoLS);
+    } else{
+        
+        localStorage.setItem("lista_conciertos",JSON.stringify(listaConciertos));
     }
 
     return listaConciertos;
@@ -435,7 +438,7 @@ const info_concierto6 = document.getElementById("info_concierto6");
 const salirInfo6 = document.getElementById("cruz_icono6");
 
 
-
+const botonPersonal = document.getElementById("ingresar_personal");
 const botonComprar = document.getElementById("boton_comprar");
 const botonSiguiente = document.getElementById("boton_siguiente");
 const formularioDatos = document.getElementById("boton_paso4");
@@ -479,6 +482,7 @@ const contenedorNumeroDeTarjeta = document.getElementById("contenedor_numero_tar
 const contenedorCodigoDeSeguridad = document.getElementById("contenedor_codigo_seguridad");
 const contenedorTitularTarjeta = document.getElementById("contenedor_titular_tarjeta");
 const contenedorVencimientoTarjeta = document.getElementById("contenedor_vencimiento_tarjeta");
+
 
 
 
@@ -622,7 +626,11 @@ salirInfo6.addEventListener("click", () => {
 });
 
 
+// ir a la pagina de ingreso del personal
+botonPersonal.addEventListener("click", () =>{
 
+    location.href = "paginas/ingresoPersonal.html";
+});
 
 
 
@@ -835,7 +843,7 @@ formularioPago.addEventListener("click", (event) => {
                 if(result.isConfirmed || result.isDismissed) {
                     location.reload();
                 }
-            });
+        });
 
     }
 });

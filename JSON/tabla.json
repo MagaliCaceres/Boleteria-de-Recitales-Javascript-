@@ -1,0 +1,56 @@
+[
+    {
+        "nombre" : "Paz Carrara - Me canse de hacer canciones",
+        "fecha" : "10/12/2022",
+        "horario" : "19:30",
+        "precio" : 2000,
+        "ubicacion" : "AV. Unacalle 1123 - C.A.B.A",
+        "entradas" : 500
+    },
+    
+    {
+        "nombre" : "Franco Masciarelli - Otro Sol",
+        "fecha" : "15/12/2022",
+        "horario" : "20:00",
+        "precio" : 2500,
+        "ubicacion" : "AV. Unacalle 1123 - C.A.B.A",
+        "entradas" : 500
+    },
+    
+    {
+        "nombre" : "Paula Prieto - esto es para mi,",
+        "fecha" : "21/12/2022",
+        "horario" : "19:30",
+        "precio" : 1000,
+        "ubicacion" : "AV. Unacalle 1123 - C.A.B.A",
+        "entradas" : 500
+    },
+    
+    {
+        "nombre" : "Martin Oliver - COMO CREAR MONSTRUOS",
+        "fecha" : "05/01/2023",
+        "horario" : "21:00",
+        "precio" : 800,
+        "ubicacion" : "AV. Unacalle 1123 - C.A.B.A",
+        "entradas" : 500
+    },
+    
+    {
+        "nombre" : "Delfina Mancardo - OCTANTE",
+        "fecha" : "29/01/2023",
+        "horario" : "21:00",
+        "precio" : 1000,
+        "ubicacion" : "AV. Unacalle 1123 - C.A.B.A",
+        "entradas" : 500
+    },
+    
+    {
+        "nombre" : "KND - Bonnefaid",
+        "fecha" : "20/01/2023",
+        "horario" : "21:00",
+        "precio" : 1200,
+        "ubicacion" : "AV. Unacalle 1123 - C.A.B.A",
+        "entradas" : 500
+    }
+
+]
