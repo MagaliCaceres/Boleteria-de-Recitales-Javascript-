@@ -16,11 +16,13 @@ function actualizarEntradas(){
 
         // agrego la lista de conciertos al localStorage
         listaConciertos = JSON.parse(conciertoLS);
+    
     } else{
-        
+        // si no lo esta, agrego la lista de conciertos 
         localStorage.setItem("lista_conciertos",JSON.stringify(listaConciertos));
     }
 
+    // retorno la lista de conciertos
     return listaConciertos;
 }
 
@@ -66,7 +68,7 @@ function descontarEntradas(cantidad) {
     });
 }
 
-// funcion que se encarga de obtener el precio de el concierto seleccionado por el usuario, según la cantidad de entradas pedidas.
+// funcion que se encarga de obtener el precio del concierto seleccionado por el usuario, según la cantidad de entradas pedidas.
 function obtenerPrecio() {
 
     // obtengo el valor del concierto elegido
@@ -173,7 +175,6 @@ function mostrarDatos() {
         }
     });
 }
-
 
 
 // funcion que valida los datos ingresados de la persona, en donde le paso por parametro sus datos.
@@ -360,7 +361,6 @@ function validarDatosDeLaTarjeta(selectorTarjeta, numeroTarjeta, codigoDeSegurid
 
 
     // si el usuario selecciona el valor por defecto creo el elemento DOM que avisa al usuario que seleccionar una opción valida
-
     const mesActual = new Date().getMonth();
 
     if (tarjetaMes == null || tarjetaMes == 0) {
@@ -373,6 +373,7 @@ function validarDatosDeLaTarjeta(selectorTarjeta, numeroTarjeta, codigoDeSegurid
 
         todoCorrecto = false;
 
+        // si el usuario ingresa algun mes anterior al mes actual del año actual, aviso que seleccione una opción valida
     }else if(((parseInt(tarjetaMes) -1) < mesActual) && ((parseInt(tarjetaAnio) === añoActual))){
 
         const mesInvalido = document.createElement("small");
@@ -395,49 +396,46 @@ function validarDatosDeLaTarjeta(selectorTarjeta, numeroTarjeta, codigoDeSegurid
 let listaConciertos = [];
 
 // agrego los objetos al array.
-listaConciertos.push(new Concierto("Paz Carrara - Me canse de hacer canciones", "10/12/2022", "19:30", 2000, "AV. Unacalle 1123 - C.A.B.A", 500));
+listaConciertos.push(new Concierto("Paz Carrara - Me canse de hacer canciones", "10/12/2022", "19:30", 2000, "AV. Unacalle 1123 - C.A.B.A", 200));
 
-listaConciertos.push(new Concierto("Franco Masciarelli - Otro Sol", "15/12/2022", "20:00", 2500, "AV. Unacalle 1123 - C.A.B.A", 500));
+listaConciertos.push(new Concierto("Franco Masciarelli - Otro Sol", "15/12/2022", "20:00", 2500, "AV. Unacalle 1123 - C.A.B.A", 200));
 
-listaConciertos.push(new Concierto("Paula Prieto - esto es para mi,", "21/12/2022", "19:30", 1000, "AV. Unacalle 1123 - C.A.B.A", 500));
+listaConciertos.push(new Concierto("Paula Prieto - esto es para mi,", "21/12/2022", "19:30", 1000, "AV. Unacalle 1123 - C.A.B.A", 200));
 
-listaConciertos.push(new Concierto("Martin Oliver - COMO CREAR MONSTRUOS", "05/01/2023", "21:00", 800, "AV. Unacalle 1123 - C.A.B.A", 500));
+listaConciertos.push(new Concierto("Martin Oliver - COMO CREAR MONSTRUOS", "05/01/2023", "21:00", 800, "AV. Unacalle 1123 - C.A.B.A", 200));
 
-listaConciertos.push(new Concierto("Delfina Mancardo - OCTANTE", "29/01/2023", "21:00", 1000, "AV. Unacalle 1123 - C.A.B.A", 500));
+listaConciertos.push(new Concierto("Delfina Mancardo - OCTANTE", "29/01/2023", "21:00", 1000, "AV. Unacalle 1123 - C.A.B.A", 200));
 
-listaConciertos.push(new Concierto("KND - Bonnefaid", "20/01/2023", "21:00", 1200, "AV. Unacalle 1123 - C.A.B.A", 500));
+listaConciertos.push(new Concierto("KND - Bonnefaid", "20/01/2023", "21:00", 1200, "AV. Unacalle 1123 - C.A.B.A", 200));
 
+// creo array actualizado
 const listaDeConcierto = actualizarEntradas();
 
 
 
 // VARIABLES GLOBALES
 
+// modals de los conciertos
 const concierto1 = document.getElementById("concierto1_img");
 const info_concierto1 = document.getElementById("info_concierto1");
 const salirInfo1 = document.getElementById("cruz_icono1");
-
 const concierto2 = document.getElementById("concierto2_img");
 const info_concierto2 = document.getElementById("info_concierto2");
 const salirInfo2 = document.getElementById("cruz_icono2");
-
 const concierto3 = document.getElementById("concierto3_img");
 const info_concierto3 = document.getElementById("info_concierto3");
 const salirInfo3 = document.getElementById("cruz_icono3");
-
 const concierto4 = document.getElementById("concierto4_img");
 const info_concierto4 = document.getElementById("info_concierto4");
 const salirInfo4 = document.getElementById("cruz_icono4");
-
 const concierto5 = document.getElementById("concierto5_img");
 const info_concierto5 = document.getElementById("info_concierto5");
 const salirInfo5 = document.getElementById("cruz_icono5");
-
 const concierto6 = document.getElementById("concierto6_img");
 const info_concierto6 = document.getElementById("info_concierto6");
 const salirInfo6 = document.getElementById("cruz_icono6");
 
-
+// botones para realizar diferentes operaciones
 const botonPersonal = document.getElementById("ingresar_personal");
 const botonComprar = document.getElementById("boton_comprar");
 const botonSiguiente = document.getElementById("boton_siguiente");
@@ -445,6 +443,7 @@ const formularioDatos = document.getElementById("boton_paso4");
 const formularioPago = document.getElementById("pagar");
 const recargaPagina = document.getElementById("volver");
 
+// secciones a mostrar
 const boleteria = document.getElementById("boleteria");
 const nosotros = document.getElementById("nosotros");
 
@@ -458,6 +457,7 @@ const paso5 = document.getElementById("paso5");
 const muestraDatos = document.getElementById("muestra_datos");
 const finalizarCompra = document.getElementById("finalizar_compra");
 
+// selectores
 const seleccionConcierto = document.getElementById("concierto");
 const seleccionFecha = document.getElementById("fecha_concierto");
 const seleccionCantidadEntradas = document.getElementById("cantidad_entradas");
@@ -465,6 +465,7 @@ const selectorTarjeta = document.getElementById("medio_pago");
 const selectorMesTarjeta = document.getElementById("mes_tarjeta");
 const selectorAnioTarjeta = document.getElementById("anio_tarjeta");
 
+// inputs
 const inputNombre = document.getElementById("nombre");
 const inputApellido = document.getElementById("apellido");
 const inputTelefono = document.getElementById("telefono");
@@ -473,6 +474,7 @@ const inputNumeroDeTarjeta = document.getElementById("numero_tarjeta");
 const inputCodigoDeSeguridadTarjeta = document.getElementById("codigo_seguridad");
 const inputTitularDeLaTarjeta = document.getElementById("titular_tarjeta");
 
+// contenedores
 const contenedorNombre = document.getElementById("contenedor_input_nombre");
 const contenedorApellido = document.getElementById("contenedor_input_apellido");
 const contenedorTelefono = document.getElementById("contenedor_input_telefono");
@@ -528,7 +530,7 @@ for (let i = añoActual; i <= añoActual + 10; i++) {
 
 // EVENTOS
 
-// mostrar info de los conciertos
+// mostrar info  (modals) de los conciertos
 
 // cuando hago click en la imagen del cocierto 1
 concierto1.addEventListener("click", () =>{
@@ -545,7 +547,6 @@ salirInfo1.addEventListener("click", () => {
     info_concierto1.className = "no_mostrar";
 });
 
-
 // cuando hago click en la imagen del cocierto 2
 concierto2.addEventListener("click", () =>{
 
@@ -560,7 +561,6 @@ salirInfo2.addEventListener("click", () => {
     // oculto la información completa
     info_concierto2.className = "no_mostrar";
 });
-
 
 // cuando hago click en la imagen del cocierto 3
 concierto3.addEventListener("click", () =>{
@@ -577,7 +577,6 @@ salirInfo3.addEventListener("click", () => {
     info_concierto3.className = "no_mostrar";
 });
 
-
 // cuando hago click en la imagen del cocierto 4
 concierto4.addEventListener("click", () =>{
 
@@ -592,7 +591,6 @@ salirInfo4.addEventListener("click", () => {
     // oculto la información completa
     info_concierto4.className = "no_mostrar";
 });
-
 
 // cuando hago click en la imagen del cocierto 5
 concierto5.addEventListener("click", () =>{
@@ -609,7 +607,6 @@ salirInfo5.addEventListener("click", () => {
     info_concierto5.className = "no_mostrar";
 });
 
-
 // cuando hago click en la imagen del cocierto 5
 concierto6.addEventListener("click", () =>{
 
@@ -624,7 +621,6 @@ salirInfo6.addEventListener("click", () => {
     // oculto la información completa
     info_concierto6.className = "no_mostrar";
 });
-
 
 // ir a la pagina de ingreso del personal
 botonPersonal.addEventListener("click", () =>{
@@ -710,7 +706,7 @@ seleccionCantidadEntradas.addEventListener("change", (e) => {
 
     }else{
 
-        //funcion que descuenta entradas
+        //aplico la funcion que descuenta entradas
         descontarEntradas(cantidadEntradas);
     }
 
@@ -718,10 +714,10 @@ seleccionCantidadEntradas.addEventListener("change", (e) => {
 
 
 
-// cuando termino se completa de manera correcta los 3 pasos (elegir concierto, fecha y cantidad de entradas) y son validadas, paso al siguiente paso
+// cuando se completa de manera correcta los 3 pasos (elegir concierto, fecha y cantidad de entradas) y son validadas, paso al siguiente paso
 botonSiguiente.addEventListener("click", () => {
 
-    // elimino la clase "no_mostrar" al paso 4 (ingresar datos del usuario)
+    // elimino la clase "no_mostrar" al paso 4 (ingresar datos del usuario), para mostrarla en pantalla
     paso4.classList.remove('no_mostrar');
 
         
@@ -739,6 +735,7 @@ formularioDatos.addEventListener("click", (event) => {
 
     // detengo el flujo del evento
     event.preventDefault();
+
     // obtengo todos los valores de los datos ingresados/seleccionados por el usuario
     const cantidadEntradas = seleccionCantidadEntradas.value;
     const nombre = inputNombre.value;
@@ -786,10 +783,11 @@ formularioDatos.addEventListener("click", (event) => {
         mostrarCantidadEntradas.className = "parrafo_datos";
         muestraDatos.append(mostrarCantidadEntradas);
 
+
         // muestro el precio final de la compra
         obtenerPrecio();
         
-        // muestro el paso siguiente
+        // muestro el paso siguiente (pagar entradas)
         paso5.classList.remove('no_mostrar');
 
         // Limpiar inputs
@@ -802,6 +800,7 @@ formularioDatos.addEventListener("click", (event) => {
         paso4.className = ("no_mostrar")
     }
 });
+
 
 // cuando el usuario, luego de ingresar los datos de la tarjeta, quiere finalizar la compra 
 formularioPago.addEventListener("click", (event) => {

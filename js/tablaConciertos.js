@@ -1,4 +1,22 @@
-/** ARCHIVO .JSON */
+// VARIABLES GLOBALES
+
+// contenedor
+const tbodyTablaConciertos = document.getElementById("cuerpo_tabla_original");
+
+
+// CODIGO
+
+// traigo lo que hay en el local storage (lista de conciertos)
+const conciertosLS = localStorage.getItem("lista_conciertos");
+
+// lo convierto en un array
+const conciertos = JSON.parse(localStorage.getItem('lista_conciertos'));
+
+// separo el atributo ENTRADAS de cada objeto de este array, en un nuevo array
+const stock = conciertos.map(concierto => concierto.entradas);
+
+
+// ARCHIVO .JSON
 
 fetch('../JSON/tabla.json')
     .then((response) => {
@@ -7,12 +25,14 @@ fetch('../JSON/tabla.json')
 
         tbodyTablaConciertos.innerHTML = "";
 
+        // por cada objeto correspondiente al json
         for (const concierto of conciertos) {
 
-            // Crear el tr
+            // Se crea el tr
             const tr = document.createElement("tr");
+            tr.setAttribute('id', 'trTabla');
 
-            // Creamos las columnas
+            // Se crean las columnas
             const td1 = document.createElement("td");
             td1.innerText = concierto.nombre
             td1.className = "datos_tabla_centro";
@@ -26,7 +46,7 @@ fetch('../JSON/tabla.json')
             td3.className = "datos_tabla";
 
             const td4 = document.createElement("td");
-            td4.innerText = concierto.precio;
+            td4.innerText = "$" + concierto.precio;
             td4.className = "datos_tabla";
 
             const td5 = document.createElement("td");
@@ -37,7 +57,7 @@ fetch('../JSON/tabla.json')
             td6.innerText = concierto.entradas;
             td6.className = "datos_tabla";
 
-            // Agregar al tr
+            // Agregar los td al tr
             tr.append(td1);
             tr.append(td2);
             tr.append(td3);
@@ -48,37 +68,24 @@ fetch('../JSON/tabla.json')
             // Agregar tr al tbody
             tbodyTablaConciertos.append(tr);
         }
+
+        // cada valor (entradas disponibles) del array stock
+        stock.forEach((cantidad) => {
+
+            // Se trae el tr ya creado
+            const tr = document.getElementById("trTabla");
+
+            // Se crean las columnas
+            const td7 = document.createElement("td");
+            td7.innerText = cantidad
+            td7.className = "datos_tabla datos_tabla_color";
+
+            // Agregar el td al tr ya creado
+            tr.append(td7);
+
+            // Se agrega tr al tbody
+            tbodyTablaConciertos.append(tr);
+        });
     });
 
-const tbodyTablaConciertos = document.getElementById("respuesta");
 
-const conciertosLS = localStorage.getItem("lista_conciertos");
-
-const conciertos = JSON.parse(localStorage.getItem('lista_conciertos'));
-
-const stock = conciertos.map(concierto => concierto.entradas);
-
-
-console.log(stock);
-
-
-for (const cantidad of stock) {
-
-    // Crear el tr
-    const tr = document.createElement("tr");
-
-    // Creamos las columnas
-    const td7 = document.createElement("td");
-    td7.innerText = cantidad
-    td7.className = "datos_tabla_centro";
-
-    // Agregar al tr
-    tr.append(td7);
-
-    // Agregar tr al tbody
-    tbodyTablaConciertos.append(tr);
-
-    console.log(cantidad)
-};
-
-    

@@ -63,7 +63,6 @@ nav {
 .nav_links {
     padding: 6px 15px;
     color: #fff;
-    /* font-size: 18px; */
     border-radius: 20px;
 }
 
@@ -209,7 +208,6 @@ nav {
     width: 100%;
 }
 
-
 .concierto_nombre{
     text-align: center;
     color: #fff;
@@ -220,11 +218,6 @@ nav {
 .artista{
     color: rgb(125, 135, 213);
 }
-
-
-/* .swal2-popup {
-    height: 800px ;
-} */
 
 .info_completa{
     position: absolute;
@@ -279,52 +272,6 @@ nav {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -553,7 +500,6 @@ nav {
 .boton_pagar:hover{
     color: rgb(73, 80, 135);
 }
-
 
 
 
@@ -808,13 +754,22 @@ nav {
 
 
 /* DATOS PARA EL PERSONAL */
-#tabla{
+
+.titulo_tabla{
+    color: #fff;
+    margin-top: 150px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.tabla{
+    padding: 10px;
     color: rgb(124, 135, 218);
-    margin-top: 200px;
     width: 100%;
 }
 
-#tabla thead tr th {
+.tabla thead tr th {
     text-align: left;
     padding: 8px;
     font-size: 20px;
@@ -834,4 +789,8 @@ nav {
     color: #fff;
     border-right: 1px solid #fff;
     text-align: left;
+}
+
+.datos_tabla_color{
+    color: red;
 }

@@ -1,3 +1,6 @@
+// FUNCIONES
+
+// funcion que actualiza la lista del personal
 function actualizarListaPersonalJson(){
 
     const personalLS = localStorage.getItem("lista_personal");
@@ -5,18 +8,50 @@ function actualizarListaPersonalJson(){
     // si el localStorage esta vacio
     if(personalLS !== null) {
 
-        // agrego la lista de conciertos al localStorage
+        // agrego la lista del personal al localStorage
         personal = JSON.parse(personalLS);
     } else{
-        
+        // si no, agrego el array del personal
         localStorage.setItem("lista_personal",JSON.stringify(personal));
     }
 
     return personal;
 };
 
+// funcion que valida la contraseña ingresada por el personal para ingresar su usuario
+function validarEntradaDelPersonal(contrasenia){
 
-// funcion que valida los datos ingresados de la persona, en donde le paso por parametro sus datos.
+    let todoCorrecto = true;
+
+    // Que cada vez que ingresa un dato, el texto de error se oculte
+    if (todoCorrecto === true || todoCorrecto === false) {
+
+        const textosInvalidar = document.getElementsByTagName("small");
+
+        for (const texto of textosInvalidar) {
+
+            texto.className = "no_mostrar"
+        }
+    }
+
+    const valorContrasenia = "personalDepartamento1890";
+
+    // si la contraseña no es la correcta, comunico al usuario, comunico que la contraseña es incorrectas
+    if (contrasenia !== valorContrasenia) {
+
+        const contraseniaInvalido = document.createElement("small");
+        contraseniaInvalido.innerText = `*Contraseña incorrecta.`;
+        contraseniaInvalido.className = "texto_validar";
+
+        contenedorContraseniaIngreso.append(contraseniaInvalido);
+
+        todoCorrecto = false;
+    }
+
+    return todoCorrecto;
+}
+
+// funcion que valida los datos ingresados del personal al registrarse, en donde le paso por parametro sus datos.
 function validarDatosDelPersonalCreado(nombre, apellido, telefono, email, contrasenia) {
 
     let todoCorrecto = true;
@@ -107,9 +142,7 @@ function validarDatosDelPersonalCreado(nombre, apellido, telefono, email, contra
         todoCorrecto = false;
     }
 
-    let espacios = false;
-    let contador = 0;
-
+    // si el input de la contraseña esta vacio, creo el elemento DOM que avisa al usuario que debe completar el campo
     if (contrasenia === "") {
 
         const constraseniaInvalido = document.createElement("small");
@@ -120,6 +153,7 @@ function validarDatosDelPersonalCreado(nombre, apellido, telefono, email, contra
 
         todoCorrecto = false;
 
+        // si los datos ingresados por el usuario son menor a 8 digitos creo el elemento DOM que avisa al usuario que debe ingresar solo 8 digitos.
     } else if (contrasenia.length < 8) {
 
         const constraseniaInvalido = document.createElement("small");
@@ -130,6 +164,7 @@ function validarDatosDelPersonalCreado(nombre, apellido, telefono, email, contra
 
         todoCorrecto = false;
 
+        // si los datos ingresados por el usuario son menor o mayor a 20 digitos creo el elemento DOM que avisa al usuario que debe ingresar solo 20 digitos.
     } else if (contrasenia.length > 20) {
 
         const constraseniaInvalido = document.createElement("small");
@@ -172,6 +207,7 @@ function validarPersonal(nombre, contrasenia) {
         todoCorrecto = false;
     }
 
+    // si el input de la contraseña esta vacio creo el elemento DOM que avisa al usuario que debe completar el campo
     if (contrasenia === "") {
 
         const contraseniaInvalido = document.createElement("small");
@@ -183,7 +219,7 @@ function validarPersonal(nombre, contrasenia) {
         todoCorrecto = false;
     }
     
-    
+    // creo uuna variable donde verifique si el nombre y la contrasenia existen en el array
     const found = personal.find(personal => personal.nombre === nombre && personal.contrasenia === contrasenia)
 
     if(found){
@@ -191,7 +227,7 @@ function validarPersonal(nombre, contrasenia) {
         todoCorrecto
         
     }else{
-
+        // si el resultado es false, comunico que ese usuario no existe
         const personalInvalido = document.createElement("small");
                 personalInvalido.innerHTML = `<br><br> *Personal Incorrecto.`;
                 personalInvalido.className = "texto_validar";
@@ -200,43 +236,13 @@ function validarPersonal(nombre, contrasenia) {
     
                 todoCorrecto = false;
     }
-
-    return todoCorrecto;
-}
-
-function validarEntradaDelPersonal(contrasenia){
-
-    let todoCorrecto = true;
-
-    // Que cada vez que ingresa un dato, el texto de error se oculte
-    if (todoCorrecto === true || todoCorrecto === false) {
-
-        const textosInvalidar = document.getElementsByTagName("small");
-
-        for (const texto of textosInvalidar) {
-
-            texto.className = "no_mostrar"
-        }
-    }
-
-    const valorContrasenia = "personalDepartamento1890";
-
-    if (contrasenia !== valorContrasenia) {
-
-        const contraseniaInvalido = document.createElement("small");
-        contraseniaInvalido.innerText = `*Complete este campo.`;
-        contraseniaInvalido.className = "texto_validar";
-
-        contenedorContraseniaIngreso.append(contraseniaInvalido);
-
-        todoCorrecto = false;
-    }
-
     return todoCorrecto;
 }
 
 
 
+
+// creo array que contiene los datos de cada personal
 let personal = [
     {
         nombre: "Miguel",
@@ -255,16 +261,19 @@ let personal = [
     }
 ]
 
+// actualizo la lista por si se crea un nuevo personal
 const listaPersonal = actualizarListaPersonalJson();
 
 
 
-const paso1 = document.getElementById("paso1");
-const contenedorContraseniaIngreso = document.getElementById("contenedor_contrasenia_del_personal");
-const inputContraseniaIngreso = document.getElementById("contraseña_personal")
-const botonIngresar = document.getElementById("ingreso_personal");
+// VARIABLES GLOBALES
 
+// pasos a mostrar
+const paso1 = document.getElementById("paso1");
 const paso2 = document.getElementById("paso2");
+
+// contenedores
+const contenedorContraseniaIngreso = document.getElementById("contenedor_contrasenia_del_personal");
 
 const contenedorNombreNuevoPersonal = document.getElementById("contenedor_nombre_nuevo");
 const contenedorApellidoNuevoPersonal = document.getElementById("contenedor_apellido_nuevo");
@@ -275,45 +284,63 @@ const contenedorContraseniaNuevoPersonal = document.getElementById("contenedor_c
 const contenedorNombrePersonal = document.getElementById("contenedor_nombre");
 const contenedorContrasenia = document.getElementById("contenedor_contrasenia");
 
+// input de la contraseña de la seccion del personal
+const inputContraseniaIngreso = document.getElementById("contraseña_personal")
+
+// inputs del nuevo personal
 const inputNombreNuevoPersonal = document.getElementById("nombre_personal_nuevo");
 const inputApellidoNuevoPersonal = document.getElementById("apellido_personal");
 const inputTelefonoNuevoPersonal = document.getElementById("telefono_personal");
 const inputEmailNuevoPersonal = document.getElementById("email_personal");
 const inputContraseniaNuevoPersonal = document.getElementById("contrasenia_personal_nuevo");
 
+// inputs del personal ya guardado
 const inputNombrePersonal = document.getElementById("nombre_personal");
 const inputcontraseniaPersonal = document.getElementById("contrasenia_personal");
 
+// botones
+const botonIngresar = document.getElementById("ingreso_personal");
 const botonPersonalCreado = document.getElementById("personal_creado")
 const botonPersonalIngreso = document.getElementById("ingreso_de_personal")
 
 
+
+// EVENTOS
+
+// cuando hago click en el boton para confirmar la contraseña de ingreso como personal
 botonIngresar.addEventListener("click", (e) => {
 
+    // detengo el flujo
     e.preventDefault();
 
     const contrasenia = inputContraseniaIngreso.value;
 
+    // valido la función pasando el valor ingresado por la persona
     if(validarEntradaDelPersonal(contrasenia)){
 
+        // muestro/oculto pasos
         paso2.classList.remove("no_mostrar");
         paso1.className = "no_mostrar";
     }
 });
 
-
+// cuando hago click en el boton para confirmar los datos del personal creado
 botonPersonalCreado.addEventListener("click", (e) => {
 
+        // detengo el flujo
     e.preventDefault();
 
+    // variables que contienen el valor de los datos ingresados por el personal que quiere registrarse
     const nombre = inputNombreNuevoPersonal.value;
     const apellido = inputApellidoNuevoPersonal.value;
     const telefono = inputTelefonoNuevoPersonal.value;
     const email = inputEmailNuevoPersonal.value;
     const contrasenia = inputContraseniaNuevoPersonal.value;
 
+    // valido la función pasando las varaibles con los valores ingresados por el personal
     if (validarDatosDelPersonalCreado(nombre, apellido, telefono, email, contrasenia)) {
 
+        // creo un objeto donde sus atributos tienen el valor de los datos ingresados
         let nuevoPersonal = {
 
             nombre: nombre,
@@ -323,16 +350,20 @@ botonPersonalCreado.addEventListener("click", (e) => {
             contrasenia: contrasenia
         }
 
+        // agrego el objeto al array del personal
         personal.push(nuevoPersonal);
+
+        // agrego el array del personal actualizado al localStorage
         localStorage.setItem("lista_personal", JSON.stringify(personal));
 
+        // limpio los inputs
         inputNombreNuevoPersonal.value = " ";
         inputApellidoNuevoPersonal.value = " ";
         inputTelefonoNuevoPersonal.value = " ";
         inputEmailNuevoPersonal.value = " ";
         inputContraseniaNuevoPersonal.value = " ";
 
-        // alerta de compra finalizada.
+        // alerta de personal registrado con exito
         Swal.fire({
             title: '¡Personal Creado!',
             icon: 'success',
@@ -346,17 +377,23 @@ botonPersonalCreado.addEventListener("click", (e) => {
     }
 });
 
+// cuando hago click en el boton para confirmar los datos del personal ya registrado
 botonPersonalIngreso.addEventListener("click", (e) =>{
 
+    // detengo el flujo
     e.preventDefault();
 
+    // guardo el valor de los datos ingresados por el personal
     const nombrePersonal = inputNombrePersonal.value;
     const contraseniaPersonal = inputcontraseniaPersonal.value;
 
+    // valido la función con los valores ingresados por el personal
     if(validarPersonal(nombrePersonal, contraseniaPersonal)){
 
+        // lo envio a otra pagina html
         location.href = "../paginas/tablaConciertos.html";
 
+        // vacio los inputs 
         inputNombrePersonal.value = " ";
         inputcontraseniaPersonal.value = " ";
     }

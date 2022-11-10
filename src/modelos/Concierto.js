@@ -1,3 +1,5 @@
+
+// Clase que mediante su constructor creo los conciertos en el sitio
 class Concierto {
 
     constructor(nombre, fecha, horario, precio, ubicacion, entradas){

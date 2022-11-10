@@ -16,7 +16,7 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Titulo -->
-    <title>Ingreso</title>
+    <title>Conciertos Disponibles</title>
     <!-- CSS  y Normalice-->
     <link rel="stylesheet" href="../css/style.css">
 
@@ -37,8 +37,11 @@
         </nav>
     </header>
 
-    <table id="tabla">
+    <!-- titulo -->
+    <h2 class="titulo_tabla">Conciertos Disponibles</h2>
 
+    <!-- tabla de conciertos disponibles y sus atributos -->
+    <table id="tablaOriginal" class="tabla">
         <thead>
             <tr>
                 <th>Nombre:</th>
@@ -47,16 +50,14 @@
                 <th>Precio:</th>
                 <th>Ubicación:</th>
                 <th>Entradas:</th>
-                <th>Entradas Disponibles:</th>
+                <th>Stock:</th>
             </tr>
         </thead>
-        <tbody id="respuesta">
+        <tbody id="cuerpo_tabla_original">
 
         </tbody>
-
     </table>
-
-
+    
 
     <!-- LIBRERIA JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

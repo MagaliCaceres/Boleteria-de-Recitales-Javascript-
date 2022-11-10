@@ -5,7 +5,7 @@
         "horario" : "19:30",
         "precio" : 2000,
         "ubicacion" : "AV. Unacalle 1123 - C.A.B.A",
-        "entradas" : 500
+        "entradas" : 200
     },
     
     {
@@ -14,7 +14,7 @@
         "horario" : "20:00",
         "precio" : 2500,
         "ubicacion" : "AV. Unacalle 1123 - C.A.B.A",
-        "entradas" : 500
+        "entradas" : 200
     },
     
     {
@@ -23,7 +23,7 @@
         "horario" : "19:30",
         "precio" : 1000,
         "ubicacion" : "AV. Unacalle 1123 - C.A.B.A",
-        "entradas" : 500
+        "entradas" : 200
     },
     
     {
@@ -32,7 +32,7 @@
         "horario" : "21:00",
         "precio" : 800,
         "ubicacion" : "AV. Unacalle 1123 - C.A.B.A",
-        "entradas" : 500
+        "entradas" : 200
     },
     
     {
@@ -41,7 +41,7 @@
         "horario" : "21:00",
         "precio" : 1000,
         "ubicacion" : "AV. Unacalle 1123 - C.A.B.A",
-        "entradas" : 500
+        "entradas" : 200
     },
     
     {
@@ -50,7 +50,6 @@
         "horario" : "21:00",
         "precio" : 1200,
         "ubicacion" : "AV. Unacalle 1123 - C.A.B.A",
-        "entradas" : 500
+        "entradas" : 200
     }
-
 ]
